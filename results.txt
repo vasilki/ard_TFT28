@@ -1,0 +1,93 @@
+5V
+Read Registers on MCUFRIEND UNO shield
+controllers either read as single 16-bit
+e.g. the ID is at readReg(0)
+or as a sequence of 8-bit values
+in special locations (first is dummy)
+
+diagnose any controller
+reg(0x0000) 28 2B	ID: ILI9320, ILI9325, ILI9335, ...
+reg(0x0004) 2C 2C 7F 7F	Manufacturer ID
+reg(0x0009) 29 2B 6B 2B 28	Status Register
+reg(0x000A) 2A 2A	Get Powsr Mode
+reg(0x000C) 2C 2C	Get Pixel Format
+reg(0x0030) 38 3B 7F 7F 3F	PTLAR
+reg(0x0033) 3B 3B 3B 7F 7F 7B 28	VSCRLDEF
+reg(0x0061) 69 6B	RDID1 HX8347-G
+reg(0x0062) 6A 6A	RDID2 HX8347-G
+reg(0x0063) 6B 68	RDID3 HX8347-G
+reg(0x0064) 6C 6C	RDID1 HX8347-A
+reg(0x0065) 6D 6F	RDID2 HX8347-A
+reg(0x0066) 6E 6E	RDID3 HX8347-A
+reg(0x0067) 6F 6F	RDID Himax HX8347-A
+reg(0x0070) 78 78	Panel Himax HX8347-A
+reg(0x00A1) A9 A9 A9 EF EF	RD_DDB SSD1963
+reg(0x00B0) B8 B9	RGB Interface Signal Control
+reg(0x00B3) BB BB B8 B8 B9	Frame Memory
+reg(0x00B4) BC BC	Frame Mode
+reg(0x00B6) BE BE BE BE A8	Display Control
+reg(0x00B7) BF BF	Entry Mode Set
+reg(0x00BF) BF BF BF A8 A8 A8	ILI9481, HX8357-B
+reg(0x00C0) E8 E8 EB FF FF FF A8 A8 A8	Panel Control
+reg(0x00C1) E9 E9 E8 E9	Display Timing
+reg(0x00C5) ED ED	Frame Rate
+reg(0x00C8) E8 E8 E8 A8 A8 A8 EF EF EF A8 A8 A8 AB	GAMMA
+reg(0x00CC) EC EC	Panel Control
+reg(0x00D0) F8 FB FF FF	Power Control
+reg(0x00D1) F9 FF FF FF	VCOM Control
+reg(0x00D2) FA FB FB	Power Normal
+reg(0x00D3) FB FB FB FF	ILI9341, ILI9488
+reg(0x00D4) FC FF FF FF	Novatek
+reg(0x00DA) FA FA	RDID1
+reg(0x00DB) FB FB	RDID2
+reg(0x00DC) FC FC	RDID3
+reg(0x00E0) E8 E8 E8 E9 EF EF EF A8 A8 A8 EF EF EF E8 A8 A8	GAMMA-P
+reg(0x00E1) E9 E9 E9 A8 A8 A8 EF EF EF E8 A8 A8 AB EF EF EF	GAMMA-N
+reg(0x00EF) EF EF EF EF EF EF	ILI9327
+reg(0x00F2) FA FA FB FF FF F8 A8 A8 EB FF FF FF	Adjust Control 2
+reg(0x00F6) FE FE FE AC	Interface Control
+
+
+
+3.3V
+diagnose any controller
+reg(0x0000) 00 00	ID: ILI9320, ILI9325, ILI9335, ...
+reg(0x0004) 04 04 04 04	Manufacturer ID
+reg(0x0009) 09 09 09 09 09	Status Register
+reg(0x000A) 08 08	Get Powsr Mode
+reg(0x000C) 0C 0C	Get Pixel Format
+reg(0x0030) 00 00 00 00 00	PTLAR
+reg(0x0033) 01 01 01 01 01 01 01	VSCRLDEF
+reg(0x0061) 41 41	RDID1 HX8347-G
+reg(0x0062) 40 40	RDID2 HX8347-G
+reg(0x0063) 41 41	RDID3 HX8347-G
+reg(0x0064) 44 44	RDID1 HX8347-A
+reg(0x0065) 45 45	RDID2 HX8347-A
+reg(0x0066) 44 44	RDID3 HX8347-A
+reg(0x0067) 45 45	RDID Himax HX8347-A
+reg(0x0070) 40 40	Panel Himax HX8347-A
+reg(0x00A1) 01 01 01 01 01	RD_DDB SSD1963
+reg(0x00B0) 00 00	RGB Interface Signal Control
+reg(0x00B3) 01 01 01 01 01	Frame Memory
+reg(0x00B4) 04 04	Frame Mode
+reg(0x00B6) 04 04 04 04 04	Display Control
+reg(0x00B7) 05 05	Entry Mode Set
+reg(0x00BF) 0D 0D 0D 0D 0D 0D	ILI9481, HX8357-B
+reg(0x00C0) 40 40 40 40 40 40 40 40 40	Panel Control
+reg(0x00C1) 41 41 41 41	Display Timing
+reg(0x00C5) 45 45	Frame Rate
+reg(0x00C8) 48 48 48 48 48 48 48 48 48 48 48 48 48	GAMMA
+reg(0x00CC) 4C 4C	Panel Control
+reg(0x00D0) 40 40 40 40	Power Control
+reg(0x00D1) 41 41 41 41	VCOM Control
+reg(0x00D2) 40 40 40	Power Normal
+reg(0x00D3) 41 41 41 41	ILI9341, ILI9488
+reg(0x00D4) 44 44 44 44	Novatek
+reg(0x00DA) 48 48	RDID1
+reg(0x00DB) 49 49	RDID2
+reg(0x00DC) 4C 4C	RDID3
+reg(0x00E0) 40 40 40 40 40 40 40 40 40 40 40 40 40 40 40 40	GAMMA-P
+reg(0x00E1) 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41	GAMMA-N
+reg(0x00EF) 4D 4D 4D 4D 4D 4D	ILI9327
+reg(0x00F2) 40 40 40 40 40 40 40 40 40 40 40 40	Adjust Control 2
+reg(0x00F6) 44 44 44 44	Interface Control
